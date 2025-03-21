@@ -80,7 +80,7 @@ public final class TotemListener implements Listener {
 				final float chance = getDamageProbability(meta.getEnchantLevel(Enchantment.DURABILITY));
 
 				// If the Totem of Undying will not be broken:
-				if (ThreadLocalRandom.current().nextFloat(0.0F, 1.0F) >= chance) {
+				if (ThreadLocalRandom.current().nextFloat(0.0F, 1.0F) < chance) {
 
 					totemBack = true; // Roll this Totem of Undying back
 				}
