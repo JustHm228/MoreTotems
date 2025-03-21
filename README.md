@@ -8,9 +8,9 @@
 ### Installation:
 
 Please ensure that you have the following software installed:
- - [Java](<https://www.oracle.com/java/>) $\ge $ 11 LTS
- - [Minecraft](<https://minecraft.net/>) $\ge $ 1.19.4
- - [Paper](<https://papermc.io/>) $\ge $ 1.19.2 build 
+ - [Java](<https://www.oracle.com/java/>) $\ge$ 11 LTS
+ - [Minecraft](<https://minecraft.net/>) $\ge$ 1.19.4
+ - [Paper](<https://papermc.io/>) $\ge$ 1.19.2 build 
    [#191](<https://github.com/PaperMC/Paper-Archive/commit/928bcc8d3a058221146cea1de7d42d7e178e78f2>)
 
 To install the plugin on your Minecraft server, you should:
@@ -23,8 +23,8 @@ To install the plugin on your Minecraft server, you should:
  - **"Unbreakable" Totems of Undying.** A Totem of Undying with the 
    [``Unbreakable`` tag](<https://minecraft.wiki/w/Data_component_format#unbreakable>) set will not disappear when used.
    To get such totem you can use one of the following commands:
-   - $\le $ 1.20.4: ``/minecraft:give @s minecraft:totem_of_undying{Unbreakable:1b} 1``
-   - $\ge $ 1.20.5: ``/minecraft:give @s minecraft:totem_of_undying[minecraft:unbreakable={}] 1``
+   - $\le$ 1.20.4: ``/minecraft:give @s minecraft:totem_of_undying{Unbreakable:1b} 1``
+   - $\ge$ 1.20.5: ``/minecraft:give @s minecraft:totem_of_undying[minecraft:unbreakable={}] 1``
  - **Enchantments for Totems of Undying:**
    - **[Unbreaking](https://minecraft.wiki/w/Unbreaking).** Every Totem of Undying enchanted with Unbreaking of 
      $n$ level has a $(\frac{100}{n+1})$% chance that it will disappear when used. Otherwise, it will not. So, 
