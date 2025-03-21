@@ -25,6 +25,7 @@
 package com.github.justhm228.moretotems.event;
 
 import com.github.justhm228.moretotems.MoreTotems;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
@@ -32,6 +33,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityResurrectEvent;
 import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;
+import java.util.concurrent.ThreadLocalRandom;
 import static java.util.Objects.requireNonNull;
 
 public final class TotemListener implements Listener {
@@ -42,6 +44,11 @@ public final class TotemListener implements Listener {
 
 		super();
 		this.plugin = requireNonNull(plugin);
+	}
+
+	private static float getDamageProbability(final int lvl) {
+
+		return (100.0F / (lvl + 1.0F)) / 100.0F;
 	}
 
 	@EventHandler(ignoreCancelled = true)
@@ -57,9 +64,25 @@ public final class TotemListener implements Listener {
 
 			final ItemStack finalTotem = totem.clone();
 
+			boolean totemBack = false;
+
 			final ItemMeta meta = totem.getItemMeta();
 
 			if (meta.isUnbreakable()) {
+
+				totemBack = true;
+
+			} else if (meta.hasEnchant(Enchantment.DURABILITY)) {
+
+				final float chance = getDamageProbability(meta.getEnchantLevel(Enchantment.DURABILITY));
+
+				if (ThreadLocalRandom.current().nextFloat(0.0F, 1.0F) >= chance) {
+
+					totemBack = true;
+				}
+			}
+
+			if (totemBack) {
 
 				plugin.getServer().getScheduler().runTaskLater(plugin, () -> restoreTotem(entity, slot, finalTotem), 1L);
 			}
