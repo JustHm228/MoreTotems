@@ -50,7 +50,7 @@ public final class TotemListener implements Listener {
 	private static float getDamageProbability(final int lvl) {
 
 		// Calculate the probability of item (enchanted with Unbreaking) to be damaged on use:
-		return (100.0F / (lvl + 1.0F)) / 100.0F; // (see https://minecraft.wiki/w/Unbreaking#Usage for details)
+		return (100.0F / (lvl + 1.0F)) / 100.0F;  // (see https://minecraft.wiki/w/Unbreaking#Usage for details)
 	}
 
 	@EventHandler(ignoreCancelled = true)
@@ -89,7 +89,9 @@ public final class TotemListener implements Listener {
 			if (rollback) {
 
 				// Roll the Totem of Undying back
-				plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(entity, slot, finalTotem), 1L);
+				plugin.getServer().getScheduler().runTaskLater(plugin,
+						() -> rollbackTotem(entity, slot, finalTotem),
+				1L);
 			}
 		}
 	}
