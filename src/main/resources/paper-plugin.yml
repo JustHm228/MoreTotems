@@ -1,0 +1,8 @@
+name: MoreTotems
+version: '0.1.0-build.1'
+main: com.github.justhm228.moretotems.MoreTotems
+api-version: '1.19'
+prefix: MoreTotems
+authors: [ JustHuman228 ]
+description: Advanced configuration for Totems of Undying.
+website: https://github.com/JustHm228/MoreTotems
