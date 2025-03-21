@@ -54,7 +54,7 @@ public final class TotemListener implements Listener {
 	}
 
 	@EventHandler(ignoreCancelled = true)
-	public void onTotemActivated(final EntityResurrectEvent e) {
+	public void onTotemUse(final EntityResurrectEvent e) {
 
 		final LivingEntity entity = e.getEntity(); // An entity that used a Totem of Undying
 
@@ -67,13 +67,13 @@ public final class TotemListener implements Listener {
 
 			final ItemStack finalTotem = totem.clone(); // Create the identical copy of the used Totem of Undying
 
-			boolean totemBack = false; // If the Totem of Undying should be rolled back
+			boolean rollback = false; // If the Totem of Undying should be rolled back
 
 			final ItemMeta meta = totem.getItemMeta();
 
 			if (meta.isUnbreakable()) { // If the Totem of Undying is unbreakable:
 
-				totemBack = true; // Roll this Totem of Undying back
+				rollback = true; // Roll this Totem of Undying back
 
 			} else if (meta.hasEnchant(Enchantment.DURABILITY)) {
 
@@ -82,14 +82,14 @@ public final class TotemListener implements Listener {
 				// If the Totem of Undying will not be broken:
 				if (ThreadLocalRandom.current().nextFloat(0.0F, 1.0F) < chance) {
 
-					totemBack = true; // Roll this Totem of Undying back
+					rollback = true; // Roll this Totem of Undying back
 				}
 			}
 
-			if (totemBack) {
+			if (rollback) {
 
 				// Roll the Totem of Undying back
-				plugin.getServer().getScheduler().runTaskLater(plugin, () -> restoreTotem(entity, slot, finalTotem), 1L);
+				plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(entity, slot, finalTotem), 1L);
 			}
 		}
 	}
@@ -134,14 +134,14 @@ public final class TotemListener implements Listener {
 		return totem;
 	}
 
-	private void restoreTotem(final LivingEntity entity, final EquipmentSlot slot, final ItemStack totem) {
+	private void rollbackTotem(final LivingEntity entity, final EquipmentSlot slot, final ItemStack totem) {
 
 		if (entity instanceof HumanEntity player) {
 
 			// Use the `PlayerInventory` if available:
 			final PlayerInventory inv = player.getInventory();
 
-			// Restore the used Totem of Undying:
+			// Roll the used Totem of Undying back:
 			switch (slot) {
 
 				case HAND -> inv.setItemInMainHand(totem);
@@ -161,7 +161,7 @@ public final class TotemListener implements Listener {
 
 			if (equipment != null) {
 
-				equipment.setItem(slot, totem, true); // Do not play the equipment sound on replacement
+				equipment.setItem(slot, totem, true); // Do not play the equipment sound on rolling back
 			}
 		}
 	}
