@@ -1,5 +1,5 @@
 name: MoreTotems
-version: '0.1.0-build.1'
+version: '${version}'
 main: com.github.justhm228.moretotems.MoreTotems
 api-version: '1.19'
 prefix: MoreTotems
