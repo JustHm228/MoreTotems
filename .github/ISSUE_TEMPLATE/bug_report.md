@@ -9,11 +9,13 @@ assignees: JustHm228
 
 ## Issue:
 A clear and concise description of your bug.
+Also, you may provide the expected behaviour here.
 
 ## Environment:
-- Used plugin version: 0.1.0-build.2.
-- Used Minecraft version.
-- Used server software and its version.
+ - Used plugin version.
+ - Used Minecraft version.
+ - Used server software and its version.
+ - Any additional context.
 
 ## How to reproduce:
 Steps to reproduce the behaviour:
