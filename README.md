@@ -8,10 +8,10 @@
 ### Installation:
 
 Please ensure that you have the following software installed:
- - [Java](<https://www.oracle.com/java/>) $\ge$ 11 LTS
- - [Minecraft](<https://minecraft.net/>) $\ge$ 1.19.4
- - [Paper](<https://papermc.io/>) $\ge$ 1.19.2 build 
-   [#191](<https://github.com/PaperMC/Paper-Archive/commit/928bcc8d3a058221146cea1de7d42d7e178e78f2>)
+ - [Java](<https://www.oracle.com/java/>) \($\ge$ 11 LTS\)
+ - [Minecraft](<https://minecraft.net/>) \($\ge$ 1.19.4\)
+ - [Paper](<https://papermc.io/>) \($\ge$ 1.19.2 build 
+   [#191](<https://github.com/PaperMC/Paper-Archive/commit/928bcc8d3a058221146cea1de7d42d7e178e78f2>)\)
 
 To install the plugin on your Minecraft server, you should:
 1. Download the [lastest](<./releases/latest>) version from the [Releases](<./releases>) tab on GitHub.
