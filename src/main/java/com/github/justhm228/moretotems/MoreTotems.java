@@ -29,7 +29,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MoreTotems extends JavaPlugin {
 
-	private TotemListener totemListener;
+	private TotemListener totemListener; // A singleton instance of `TotemListener`
 
 	public MoreTotems() {
 
@@ -38,20 +38,23 @@ public final class MoreTotems extends JavaPlugin {
 
 	public TotemListener getTotemListener() {
 
-		return totemListener;
+		return totemListener; // Provide a singleton instance of `TotemListener`
 	}
 
 	@Override()
 	public void onLoad() {
 
+		// Load the plugin:
 		super.onLoad();
 	}
 
 	@Override()
 	public void onEnable() {
 
+		// Enable the plugin:
 		super.onEnable();
 
+		// Register event listeners for Totems of Undying:
 		final TotemListener totemListener = new TotemListener(this);
 
 		getServer().getPluginManager().registerEvents(totemListener, this);
@@ -61,6 +64,7 @@ public final class MoreTotems extends JavaPlugin {
 	@Override()
 	public void onDisable() {
 
+		// Disable the plugin:
 		super.onDisable();
 	}
 }
