@@ -65,8 +65,6 @@ public final class TotemListener implements Listener {
 		// If the used Totem of Undying was found:
 		if (totem != null) {
 
-			final ItemStack finalTotem = totem.clone(); // Create the identical copy of the used Totem of Undying
-
 			boolean rollback = false; // If the Totem of Undying should be rolled back
 
 			final ItemMeta meta = totem.getItemMeta();
@@ -87,6 +85,8 @@ public final class TotemListener implements Listener {
 			}
 
 			if (rollback) {
+
+				final ItemStack finalTotem = totem.clone(); // Create the identical copy of the used Totem of Undying
 
 				// Roll the Totem of Undying back
 				plugin.getServer().getScheduler().runTaskLater(plugin,
