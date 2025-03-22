@@ -28,10 +28,7 @@ import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Spliterator;
+import java.util.*;
 import java.util.stream.Stream;
 import static java.util.Objects.requireNonNull;
 
@@ -39,7 +36,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	private final MoreTotemsAPI api;
 
-	private final List<TotemProcessorGuard<? extends Event>> processors;
+	private final Set<TotemProcessorGuard<? extends Event>> processors;
 
 	public TotemProcessors(final MoreTotemsAPI api) throws NullPointerException, IllegalStateException {
 
@@ -51,7 +48,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 		}
 
 		this.api = api;
-		processors = new ArrayList<>();
+		processors = new HashSet<>();
 		BuiltinTotemProcessors.initDefault(this);
 	}
 
