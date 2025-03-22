@@ -31,6 +31,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.event.entity.EntityResurrectEvent;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.slf4j.Logger;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.api.event.TotemUsageProcessor;
 
@@ -98,15 +99,26 @@ public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 	@Override()
 	public void accept(final EntityResurrectEvent e, final MoreTotemsAPI api) {
 
+		final Plugin plugin = api.getAsPlugin();
+
+		final Logger log = plugin.getSLF4JLogger();
+
 		final ItemStack totem = findTotem(e).clone();
 
 		final float chance = getDamageProbability(totem.getEnchantmentLevel(UNBREAKING));
 
+		log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Rolling ({}%)...", chance);
+
 		if (ThreadLocalRandom.current().nextFloat(0.0F, 1.0F) < chance) {
 
-			final Plugin plugin = api.getAsPlugin();
-
+			log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Rolled! Result: Will not disappear.");
+			log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Rolling the totem back...");
 			plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
+
+		} else {
+
+			log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Rolled! Result: Will disappear.");
+			log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Doing nothing.");
 		}
 	}
 

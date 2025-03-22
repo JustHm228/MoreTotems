@@ -26,6 +26,7 @@ package com.github.justhm228.moretotems.main;
 
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.slf4j.Logger;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.api.event.TotemProcessors;
 import com.github.justhm228.moretotems.internal.event.TotemListener;
@@ -71,13 +72,23 @@ public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 		// Enable the plugin:
 		super.onEnable();
 
+		final Logger log = getSLF4JLogger();
+
+		log.info("Starting up...");
+		log.info("Loading TotemProcessors...");
+
 		totemProcessors = new TotemProcessors(this);
+
+		log.info("Built-in TotemProcessors has been loaded!");
+		log.info("Hooking into the event queue...");
 
 		// Register event listeners for Totems of Undying:
 		final TotemListener totemListener = new TotemListener(this);
 
 		getServer().getPluginManager().registerEvents(totemListener, this);
 		this.totemListener = totemListener;
+		log.info("Successfully hooked into the event queue!");
+		log.info("Started up!");
 	}
 
 	@Override()
@@ -85,5 +96,9 @@ public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 
 		// Disable the plugin:
 		super.onDisable();
+
+		final Logger log = getSLF4JLogger();
+
+		log.info("Shutting down...");
 	}
 }

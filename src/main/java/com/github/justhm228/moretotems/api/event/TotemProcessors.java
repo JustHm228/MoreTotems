@@ -45,7 +45,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 		if (requireNonNull(api).getTotemProcessors() != null) {
 
-			throw new IllegalStateException();
+			throw new IllegalStateException("The provided MoreTotemsAPI instance is already taken!");
 		}
 
 		this.api = api;
@@ -55,9 +55,12 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	public void hookProcessor(final TotemProcessor<?> processor) {
 
+		final Logger log = api.getAsPlugin().getSLF4JLogger();
+
 		if (hasProcessor(processor)) {
 
 			processors.add(new TotemProcessorGuard<>(processor));
+			log.info("[TotemProcessors] {} has successfully been registered!", processor.getClass().getName());
 		}
 	}
 
@@ -68,7 +71,12 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	public void unhookProcessor(final TotemProcessor<?> processor) {
 
-		processors.removeIf((g) -> g.getGuarded() == processor);
+		final Logger log = api.getAsPlugin().getSLF4JLogger();
+
+		if (processors.removeIf((g) -> g.getGuarded() == processor)) {
+
+			log.info("[TotemProcessors] {} has successfully been unregistered!", processor.getClass().getName());
+		}
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -78,12 +86,16 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 		boolean affected = false;
 
+		log.trace("[TotemProcessors] Running TotemProcessors for event {}", e);
+
 		for (@SuppressWarnings("rawtypes") final TotemProcessor processor : processors) {
 
 			@SuppressWarnings("unchecked")
 			final boolean applicable = processor.test(e);
 
 			if (applicable) {
+
+				log.trace("[TotemProcessors] Running {} processor for event {}...", processor.getClass().getName(), e);
 
 				try {
 
@@ -95,6 +107,11 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 					log.error("Detected an unhandled exception while running TotemProcessors!", failed);
 				}
 			}
+		}
+
+		if (affected) {
+
+			log.trace("[TotemProcessors] Event {} has been processed!", e);
 		}
 
 		return affected;

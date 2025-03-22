@@ -28,6 +28,7 @@ import java.util.Objects;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.event.entity.EntityResurrectEvent;
 import org.bukkit.inventory.ItemStack;
+import org.slf4j.Logger;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.api.event.TotemUsageProcessor;
 
@@ -69,10 +70,13 @@ final class UnbreakableTotemProcessor extends TotemUsageProcessor {
 	@Override()
 	public void accept(final EntityResurrectEvent e, final MoreTotemsAPI api) {
 
-		final ItemStack totem = findTotem(e).clone();
-
 		final Plugin plugin = api.getAsPlugin();
 
+		final Logger log = plugin.getSLF4JLogger();
+
+		final ItemStack totem = findTotem(e).clone();
+
+		log.trace("[TotemProcessors] (UnbreakableTotemProcessor): Rolling the totem back...");
 		plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
 	}
 
