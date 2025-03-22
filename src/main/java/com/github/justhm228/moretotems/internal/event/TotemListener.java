@@ -24,7 +24,7 @@
 
 package com.github.justhm228.moretotems.internal.event;
 
-import com.github.justhm228.moretotems.main.MoreTotems;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityResurrectEvent;
@@ -33,17 +33,17 @@ import static java.util.Objects.requireNonNull;
 // Handles custom mechanics, added for Totems of Undying by this plugin
 public final class TotemListener implements Listener {
 
-	private final MoreTotems plugin; // The plugin instance
+	private final MoreTotemsAPI api; // The API instance
 
-	public TotemListener(final MoreTotems plugin) throws NullPointerException {
+	public TotemListener(final MoreTotemsAPI api) throws NullPointerException {
 
 		super();
-		this.plugin = requireNonNull(plugin); // The plugin instance is required to register `TotemListener`
+		this.api = requireNonNull(api); // The API instance is required to register `TotemListener`
 	}
 
 	@EventHandler(ignoreCancelled = true)
 	public void onTotemUse(final EntityResurrectEvent e) {
 
-		plugin.getTotemProcessors().fireProcessors(e);
+		api.getTotemProcessors().fireProcessors(e);
 	}
 }
