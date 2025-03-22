@@ -28,6 +28,7 @@ import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 import java.util.*;
 import java.util.stream.Stream;
 import static java.util.Objects.requireNonNull;
@@ -73,6 +74,8 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public boolean fireProcessors(final Event e) {
 
+		final Logger log = api.getAsPlugin().getSLF4JLogger();
+
 		boolean affected = false;
 
 		for (@SuppressWarnings("rawtypes") final TotemProcessor processor : processors) {
@@ -89,7 +92,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 				} catch (final RuntimeException failed) {
 
-					throw failed;
+					log.error("Detected an unhandled exception while running TotemProcessors!", failed);
 				}
 			}
 		}
