@@ -24,9 +24,12 @@
 
 package com.github.justhm228.moretotems;
 
+import com.github.justhm228.moretotems.event.TotemProcessors;
 import org.bukkit.plugin.Plugin;
 
 public interface MoreTotemsAPI {
+
+	TotemProcessors getTotemProcessors();
 
 	Plugin getAsPlugin();
 }

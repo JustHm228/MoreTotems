@@ -25,16 +25,25 @@
 package com.github.justhm228.moretotems;
 
 import com.github.justhm228.moretotems.event.TotemListener;
+import com.github.justhm228.moretotems.event.TotemProcessors;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MoreTotems extends JavaPlugin implements MoreTotemsAPI {
+
+	private TotemProcessors totemProcessors;
 
 	private TotemListener totemListener; // A singleton instance of `TotemListener`
 
 	public MoreTotems() {
 
 		super();
+	}
+
+	@Override()
+	public TotemProcessors getTotemProcessors() {
+
+		return totemProcessors;
 	}
 
 	public TotemListener getTotemListener() {
@@ -60,6 +69,8 @@ public final class MoreTotems extends JavaPlugin implements MoreTotemsAPI {
 
 		// Enable the plugin:
 		super.onEnable();
+
+		totemProcessors = new TotemProcessors(this);
 
 		// Register event listeners for Totems of Undying:
 		final TotemListener totemListener = new TotemListener(this);
