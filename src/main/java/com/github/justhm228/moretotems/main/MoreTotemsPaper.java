@@ -30,13 +30,13 @@ import com.github.justhm228.moretotems.api.event.TotemProcessors;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class MoreTotems extends JavaPlugin implements MoreTotemsAPI {
+public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 
 	private TotemProcessors totemProcessors;
 
 	private TotemListener totemListener; // A singleton instance of `TotemListener`
 
-	public MoreTotems() {
+	public MoreTotemsPaper() {
 
 		super();
 	}
