@@ -22,52 +22,22 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems.api.event;
+package com.github.justhm228.moretotems.internal.event;
 
-import com.github.justhm228.moretotems.api.MoreTotemsAPI;
-import org.bukkit.event.entity.EntityResurrectEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
+import com.github.justhm228.moretotems.api.event.TotemProcessors;
+import static java.util.Objects.requireNonNull;
 
-final class UnbreakableTotemProcessor extends TotemUsageProcessor {
+public final class BuiltinTotemProcessors {
 
-	private static final UnbreakableTotemProcessor INSTANCE;
-
-	static {
-
-		INSTANCE = new UnbreakableTotemProcessor();
-	}
-
-	private UnbreakableTotemProcessor() {
+	private BuiltinTotemProcessors() {
 
 		super();
 	}
 
-	static UnbreakableTotemProcessor getInstance() {
+	public static void initDefault(final TotemProcessors processors) {
 
-		return INSTANCE;
-	}
-
-	@Override()
-	public boolean test(final EntityResurrectEvent e) {
-
-		if (e.isCancelled()) {
-
-			return false;
-		}
-
-		final ItemStack totem = findTotem(e);
-
-		return totem != null && totem.getItemMeta().isUnbreakable();
-	}
-
-	@Override()
-	public void accept(final EntityResurrectEvent e, final MoreTotemsAPI api) {
-
-		final ItemStack totem = findTotem(e).clone();
-
-		final Plugin plugin = api.getAsPlugin();
-
-		plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
+		requireNonNull(processors);
+		processors.hookProcessor(UnbreakableTotemProcessor.getInstance());
+		processors.hookProcessor(TotemUnbreakingProcessor.getInstance());
 	}
 }

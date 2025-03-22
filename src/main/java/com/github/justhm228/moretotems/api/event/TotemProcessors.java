@@ -25,6 +25,7 @@
 package com.github.justhm228.moretotems.api.event;
 
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
+import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
@@ -116,7 +117,6 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	private void initDefault() {
 
-		hookProcessor(UnbreakableTotemProcessor.getInstance());
-		hookProcessor(TotemUnbreakingProcessor.getInstance());
+		BuiltinTotemProcessors.initDefault(this);
 	}
 }
