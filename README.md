@@ -1,7 +1,6 @@
 ## MoreTotems
 
-**MoreTotems** is a simple Paper plugin which allows you to configure 
-[Totems of Undying](<https://minecraft.wiki/w/Totem_of_Undying>) on your Minecraft server more wisely.
+**MoreTotems** is a simple Paper plugin which adds some minor tweaks to Totems of Undying.
 
 ## Quick Start
 
