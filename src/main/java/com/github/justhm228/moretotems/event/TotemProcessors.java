@@ -117,5 +117,6 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 	private void initDefault() {
 
 		hookProcessor(UnbreakableTotemProcessor.getInstance());
+		hookProcessor(TotemUnbreakingProcessor.getInstance());
 	}
 }
