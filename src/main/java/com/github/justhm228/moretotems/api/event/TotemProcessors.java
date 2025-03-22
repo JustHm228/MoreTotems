@@ -57,11 +57,8 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 		final Logger log = api.getAsPlugin().getSLF4JLogger();
 
-		if (hasProcessor(processor)) {
-
-			processors.add(new TotemProcessorGuard<>(processor));
-			log.info("[TotemProcessors] {} has successfully been registered!", processor.getClass().getName());
-		}
+		processors.add(new TotemProcessorGuard<>(processor));
+		log.info("[TotemProcessors] {} has successfully been registered!", processor.getClass().getName());
 	}
 
 	public boolean hasProcessor(final TotemProcessor<?> processor) {
