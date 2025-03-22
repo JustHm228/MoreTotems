@@ -29,13 +29,17 @@ import com.github.justhm228.moretotems.api.event.TotemUsageProcessor;
 import org.bukkit.event.entity.EntityResurrectEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+import java.util.Objects;
 
 final class UnbreakableTotemProcessor extends TotemUsageProcessor {
+
+	private static final int HASH_CODE;
 
 	private static final UnbreakableTotemProcessor INSTANCE;
 
 	static {
 
+		HASH_CODE = Objects.hash(UnbreakableTotemProcessor.class);
 		INSTANCE = new UnbreakableTotemProcessor();
 	}
 
@@ -70,5 +74,23 @@ final class UnbreakableTotemProcessor extends TotemUsageProcessor {
 		final Plugin plugin = api.getAsPlugin();
 
 		plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
+	}
+
+	@Override()
+	public String toString() {
+
+		return super.toString();
+	}
+
+	@Override()
+	public boolean equals(final Object another) {
+
+		return another instanceof UnbreakableTotemProcessor;
+	}
+
+	@Override()
+	public int hashCode() {
+
+		return HASH_CODE;
 	}
 }

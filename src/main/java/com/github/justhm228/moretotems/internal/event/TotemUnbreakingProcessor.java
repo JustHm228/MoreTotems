@@ -31,11 +31,14 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.entity.EntityResurrectEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 
 	private static final Enchantment UNBREAKING;
+
+	private static final int HASH_CODE;
 
 	private static final TotemUnbreakingProcessor INSTANCE;
 
@@ -59,6 +62,7 @@ public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 			UNBREAKING = unbreaking;
 		}
 
+		HASH_CODE = Objects.hash(TotemUnbreakingProcessor.class);
 		INSTANCE = new TotemUnbreakingProcessor();
 	}
 
@@ -104,5 +108,23 @@ public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 
 			plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
 		}
+	}
+
+	@Override()
+	public String toString() {
+
+		return super.toString();
+	}
+
+	@Override()
+	public boolean equals(final Object another) {
+
+		return another instanceof TotemUnbreakingProcessor;
+	}
+
+	@Override()
+	public int hashCode() {
+
+		return HASH_CODE;
 	}
 }
