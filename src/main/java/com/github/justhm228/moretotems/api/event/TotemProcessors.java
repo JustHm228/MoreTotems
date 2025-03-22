@@ -48,7 +48,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 		}
 
 		this.api = api;
-		processors = new HashSet<>();
+		processors = new HashSet<>(BuiltinTotemProcessors.INITIAL_CAPACITY);
 		BuiltinTotemProcessors.initDefault(this);
 	}
 
