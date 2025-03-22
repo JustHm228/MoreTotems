@@ -87,4 +87,61 @@ public class MoreTotemsMixin {
 
 		return findTotem(e) != null;
 	}
+
+	protected final void rollbackTotem(final EntityResurrectEvent e, final ItemStack totem, final boolean clone) {
+
+		rollbackTotem(e.getEntity(), e.getHand(), totem, clone);
+	}
+
+	protected final void rollbackTotem(final EntityResurrectEvent e, final ItemStack totem) {
+
+		rollbackTotem(e.getEntity(), e.getHand(), totem);
+	}
+
+	protected final void rollbackTotem(final EntityResurrectEvent e) {
+
+		rollbackTotem(e, findTotem(e));
+	}
+
+	protected final void rollbackTotem(final LivingEntity entity, final EquipmentSlot slot, ItemStack totem, final boolean clone) {
+
+		if (clone) {
+
+			totem = totem.clone();
+		}
+
+		if (entity instanceof HumanEntity player) {
+
+			// Use the `PlayerInventory` if available:
+			final PlayerInventory inv = player.getInventory();
+
+			// Roll the used Totem of Undying back:
+			switch (slot) {
+
+				case HAND -> inv.setItemInMainHand(totem);
+				case OFF_HAND -> inv.setItemInOffHand(totem);
+
+				// This should never happen, but if it somehow happens, here is the code for it:
+				case FEET -> inv.setBoots(totem);
+				case LEGS -> inv.setLeggings(totem);
+				case CHEST -> inv.setChestplate(totem);
+				case HEAD -> inv.setHelmet(totem);
+			}
+
+		} else {
+
+			// Otherwise, use `EntityEquipment` from Paper:
+			final EntityEquipment equipment = entity.getEquipment();
+
+			if (equipment != null) {
+
+				equipment.setItem(slot, totem, true); // Do not play the equipment sound on rolling back
+			}
+		}
+	}
+
+	protected final void rollbackTotem(final LivingEntity entity, final EquipmentSlot slot, final ItemStack totem) {
+
+		rollbackTotem(entity, slot, totem, true);
+	}
 }
