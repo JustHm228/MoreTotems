@@ -112,8 +112,17 @@ public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 		if (ThreadLocalRandom.current().nextFloat(0.0F, 1.0F) < chance) {
 
 			log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Rolled! Result: Will not disappear.");
-			log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Rolling the totem back...");
-			plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
+
+			plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
+
+				if (!e.isCancelled()) {
+
+					log.trace("[TotemProcessors] (TotemUnbreakingProcessor): Rolling the totem back...");
+					rollbackTotem(e, totem, false);
+					log.trace("[TotemProcessors] (TotemUnbreakingProcessor): The totem has been rolled back!");
+				}
+
+			}, 1L);
 
 		} else {
 

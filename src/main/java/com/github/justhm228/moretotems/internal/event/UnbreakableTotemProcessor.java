@@ -77,7 +77,15 @@ final class UnbreakableTotemProcessor extends TotemUsageProcessor {
 		final ItemStack totem = findTotem(e).clone();
 
 		log.trace("[TotemProcessors] (UnbreakableTotemProcessor): Rolling the totem back...");
-		plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
+
+		plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
+
+			if (!e.isCancelled()) {
+
+				rollbackTotem(e, totem, false);
+			}
+
+		}, 1L);
 	}
 
 	@Override()
