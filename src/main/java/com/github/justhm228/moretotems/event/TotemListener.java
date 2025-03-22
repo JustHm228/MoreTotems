@@ -86,11 +86,11 @@ public final class TotemListener implements Listener {
 
 			if (rollback) {
 
-				final ItemStack finalTotem = totem.clone(); // Create the identical copy of the used Totem of Undying
+				final ItemStack rolled = totem.clone(); // Create the identical copy of the used Totem of Undying
 
 				// Roll the Totem of Undying back
 				plugin.getServer().getScheduler().runTaskLater(plugin,
-						() -> rollbackTotem(entity, slot, finalTotem),
+						() -> rollbackTotem(entity, slot, rolled),
 				1L);
 			}
 		}
