@@ -24,8 +24,10 @@
 
 package com.github.justhm228.moretotems.api.event;
 
+import java.util.Objects;
 import org.bukkit.event.Event;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
+import static java.util.Objects.hash;
 
 public class TotemProcessorProxy<E extends Event> implements TotemProcessor<E> {
 
@@ -50,5 +52,23 @@ public class TotemProcessorProxy<E extends Event> implements TotemProcessor<E> {
 
 			proxied.accept(e, api);
 		}
+	}
+
+	@Override()
+	public String toString() {
+
+		return getClass().getName() + "[" + proxied + "]";
+	}
+
+	@Override()
+	public boolean equals(final Object another) {
+
+		return another instanceof TotemProcessorProxy<?> proxy && Objects.equals(proxied, proxy.proxied);
+	}
+
+	@Override()
+	public int hashCode() {
+
+		return hash(proxied);
 	}
 }

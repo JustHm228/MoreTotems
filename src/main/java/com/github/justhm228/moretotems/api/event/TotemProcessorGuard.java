@@ -51,4 +51,22 @@ final class TotemProcessorGuard<E extends Event> extends TotemProcessorProxy<E> 
 
 		proxied.accept(e, api);
 	}
+
+	@Override()
+	public String toString() {
+
+		return super.toString();
+	}
+
+	@Override()
+	public boolean equals(final Object another) {
+
+		return another instanceof TotemProcessorGuard<?> guard && proxied == guard.proxied;
+	}
+
+	@Override()
+	public int hashCode() {
+
+		return super.hashCode();
+	}
 }
