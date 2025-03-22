@@ -88,14 +88,14 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 		log.trace("[TotemProcessors] Running TotemProcessors for event {}", e);
 
-		for (@SuppressWarnings("rawtypes") final TotemProcessor processor : processors) {
+		for (@SuppressWarnings("rawtypes") final TotemProcessorGuard processor : processors) {
 
 			@SuppressWarnings("unchecked")
 			final boolean applicable = processor.test(e);
 
 			if (applicable) {
 
-				log.trace("[TotemProcessors] Running {} processor for event {}...", processor.getClass().getName(), e);
+				log.trace("[TotemProcessors] Running {} processor for event {}...", processor.getGuarded().getClass().getName(), e);
 
 				try {
 
