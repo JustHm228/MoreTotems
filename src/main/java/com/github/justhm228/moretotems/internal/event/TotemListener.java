@@ -24,10 +24,10 @@
 
 package com.github.justhm228.moretotems.internal.event;
 
-import com.github.justhm228.moretotems.api.MoreTotemsAPI;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityResurrectEvent;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import static java.util.Objects.requireNonNull;
 
 // Handles custom mechanics, added for Totems of Undying by this plugin

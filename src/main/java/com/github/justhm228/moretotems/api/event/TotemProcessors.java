@@ -24,13 +24,13 @@
 
 package com.github.justhm228.moretotems.api.event;
 
-import com.github.justhm228.moretotems.api.MoreTotemsAPI;
-import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
-import org.bukkit.event.Event;
-import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
 import java.util.*;
 import java.util.stream.Stream;
+import org.bukkit.event.Event;
+import org.slf4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
+import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
 import static java.util.Objects.requireNonNull;
 
 public final class TotemProcessors implements Iterable<TotemProcessor<?>> {

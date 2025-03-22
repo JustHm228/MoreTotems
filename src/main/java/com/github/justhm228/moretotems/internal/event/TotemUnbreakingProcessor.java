@@ -24,15 +24,15 @@
 
 package com.github.justhm228.moretotems.internal.event;
 
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Objects;
+import org.bukkit.NamespacedKey;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.event.entity.EntityResurrectEvent;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.api.event.TotemUsageProcessor;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.event.entity.EntityResurrectEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
-import java.util.Objects;
-import java.util.concurrent.ThreadLocalRandom;
 
 public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 

@@ -24,8 +24,8 @@
 
 package com.github.justhm228.moretotems.api.event;
 
-import java.util.function.BiConsumer;
 import java.util.function.Predicate;
+import java.util.function.BiConsumer;
 import org.bukkit.event.Event;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 

@@ -24,8 +24,8 @@
 
 package com.github.justhm228.moretotems.api.event;
 
-import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import org.bukkit.event.entity.EntityResurrectEvent;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 
 public abstract class TotemUsageProcessor extends AbstractTotemProcessor<EntityResurrectEvent> {
 

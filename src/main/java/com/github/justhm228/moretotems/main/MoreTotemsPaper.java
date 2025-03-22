@@ -24,11 +24,11 @@
 
 package com.github.justhm228.moretotems.main;
 
-import com.github.justhm228.moretotems.api.MoreTotemsAPI;
-import com.github.justhm228.moretotems.internal.event.TotemListener;
-import com.github.justhm228.moretotems.api.event.TotemProcessors;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
+import com.github.justhm228.moretotems.api.event.TotemProcessors;
+import com.github.justhm228.moretotems.internal.event.TotemListener;
 
 public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 

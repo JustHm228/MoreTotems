@@ -24,13 +24,13 @@
 
 package com.github.justhm228.moretotems.api.util;
 
-import org.bukkit.entity.HumanEntity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityResurrectEvent;
-import org.bukkit.inventory.EntityEquipment;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.EntityEquipment;
+import org.bukkit.inventory.ItemStack;
 
 public class MoreTotemsMixin {
 
