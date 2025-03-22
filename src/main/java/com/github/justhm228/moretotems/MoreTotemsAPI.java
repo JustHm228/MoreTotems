@@ -24,47 +24,6 @@
 
 package com.github.justhm228.moretotems;
 
-import com.github.justhm228.moretotems.event.TotemListener;
-import org.bukkit.plugin.java.JavaPlugin;
+public interface MoreTotemsAPI {
 
-public final class MoreTotems extends JavaPlugin implements MoreTotemsAPI {
-
-	private TotemListener totemListener; // A singleton instance of `TotemListener`
-
-	public MoreTotems() {
-
-		super();
-	}
-
-	public TotemListener getTotemListener() {
-
-		return totemListener; // Provide a singleton instance of `TotemListener`
-	}
-
-	@Override()
-	public void onLoad() {
-
-		// Load the plugin:
-		super.onLoad();
-	}
-
-	@Override()
-	public void onEnable() {
-
-		// Enable the plugin:
-		super.onEnable();
-
-		// Register event listeners for Totems of Undying:
-		final TotemListener totemListener = new TotemListener(this);
-
-		getServer().getPluginManager().registerEvents(totemListener, this);
-		this.totemListener = totemListener;
-	}
-
-	@Override()
-	public void onDisable() {
-
-		// Disable the plugin:
-		super.onDisable();
-	}
 }
