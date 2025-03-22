@@ -24,6 +24,9 @@
 
 package com.github.justhm228.moretotems;
 
+import org.bukkit.plugin.Plugin;
+
 public interface MoreTotemsAPI {
 
+	Plugin getAsPlugin();
 }

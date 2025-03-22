@@ -25,6 +25,7 @@
 package com.github.justhm228.moretotems;
 
 import com.github.justhm228.moretotems.event.TotemListener;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MoreTotems extends JavaPlugin implements MoreTotemsAPI {
@@ -39,6 +40,12 @@ public final class MoreTotems extends JavaPlugin implements MoreTotemsAPI {
 	public TotemListener getTotemListener() {
 
 		return totemListener; // Provide a singleton instance of `TotemListener`
+	}
+
+	@Override()
+	public Plugin getAsPlugin() {
+
+		return this;
 	}
 
 	@Override()
