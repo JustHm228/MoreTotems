@@ -32,8 +32,8 @@ import com.github.justhm228.moretotems.MoreTotemsAPI;
 public interface TotemProcessor<E extends Event> extends Predicate<E>, BiConsumer<E, MoreTotemsAPI> {
 
 	@Override()
-	void accept(final E e, final MoreTotemsAPI api);
+	boolean test(final E e);
 
 	@Override()
-	boolean test(final E e);
+	void accept(final E e, final MoreTotemsAPI api);
 }
