@@ -51,6 +51,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 		this.api = api;
 		processors = new ArrayList<>();
+		initDefault();
 	}
 
 	public void hookProcessor(final TotemProcessor<?> processor) {
@@ -111,5 +112,9 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 		final Iterator<TotemProcessor<? extends Event>> result = (Iterator<TotemProcessor<? extends Event>>) (Iterator) processors.iterator();
 
 		return result;
+	}
+
+	private void initDefault() {
+
 	}
 }
