@@ -25,6 +25,7 @@
 package com.github.justhm228.moretotems.event;
 
 import com.github.justhm228.moretotems.MoreTotemsAPI;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.entity.EntityResurrectEvent;
 import org.bukkit.inventory.ItemStack;
@@ -33,9 +34,29 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 
+	private static final Enchantment UNBREAKING;
+
 	private static final TotemUnbreakingProcessor INSTANCE;
 
 	static {
+
+		{
+
+			Enchantment unbreaking = Enchantment.getByKey(NamespacedKey.minecraft("unbreaking"));
+
+			if (unbreaking == null) {
+
+				try {
+
+					unbreaking = Enchantment.DURABILITY;
+
+				} catch (final NoSuchFieldError ignored) {
+
+				}
+			}
+
+			UNBREAKING = unbreaking;
+		}
 
 		INSTANCE = new TotemUnbreakingProcessor();
 	}
@@ -66,7 +87,7 @@ public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 
 		final ItemStack totem = findTotem(e);
 
-		return totem != null && totem.containsEnchantment(Enchantment.DURABILITY);
+		return totem != null && totem.containsEnchantment(UNBREAKING);
 	}
 
 	@Override()
@@ -74,7 +95,7 @@ public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 
 		final ItemStack totem = findTotem(e).clone();
 
-		final float chance = getDamageProbability(totem.getEnchantmentLevel(Enchantment.DURABILITY));
+		final float chance = getDamageProbability(totem.getEnchantmentLevel(UNBREAKING));
 
 		if (ThreadLocalRandom.current().nextFloat(0.0F, 1.0F) < chance) {
 
