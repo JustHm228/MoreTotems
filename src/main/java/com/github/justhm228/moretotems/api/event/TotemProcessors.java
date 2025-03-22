@@ -59,12 +59,12 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	public boolean hasProcessor(final TotemProcessor<?> processor) {
 
-		return processors.stream().anyMatch((e) -> e.getGuarded() == processor);
+		return processors.stream().anyMatch((g) -> g.getGuarded() == processor);
 	}
 
 	public void unhookProcessor(final TotemProcessor<?> processor) {
 
-		processors.removeIf((e) -> e.getGuarded() == processor);
+		processors.removeIf((g) -> g.getGuarded() == processor);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
