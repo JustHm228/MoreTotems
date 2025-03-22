@@ -27,7 +27,7 @@ plugins {
 }
 
 group = 'com.github.justhm228'
-version = '0.1.0-build.6'
+version = '0.1.1'
 
 repositories {
 	mavenCentral()
