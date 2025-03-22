@@ -54,7 +54,10 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	public void hookProcessor(final TotemProcessor<?> processor) {
 
-		processors.add(new TotemProcessorGuard<>(processor));
+		if (hasProcessor(processor)) {
+
+			processors.add(new TotemProcessorGuard<>(processor));
+		}
 	}
 
 	public boolean hasProcessor(final TotemProcessor<?> processor) {
