@@ -24,10 +24,24 @@
 
 package com.github.justhm228.moretotems.internal.event;
 
+import java.util.Set;
+import java.util.HashSet;
+import com.github.justhm228.moretotems.api.event.AbstractTotemProcessor;
 import com.github.justhm228.moretotems.api.event.TotemProcessors;
 import static java.util.Objects.requireNonNull;
 
 public final class BuiltinTotemProcessors {
+
+	public static final int INITIAL_CAPACITY = 2;
+
+	private static final Set<AbstractTotemProcessor<?>> BUILTINS;
+
+	static {
+
+		BUILTINS = new HashSet<>(INITIAL_CAPACITY);
+		BUILTINS.add(UnbreakableTotemProcessor.getInstance());
+		BUILTINS.add(TotemUnbreakingProcessor.getInstance());
+	}
 
 	private BuiltinTotemProcessors() {
 
@@ -37,7 +51,10 @@ public final class BuiltinTotemProcessors {
 	public static void initDefault(final TotemProcessors processors) {
 
 		requireNonNull(processors);
-		processors.hookProcessor(UnbreakableTotemProcessor.getInstance());
-		processors.hookProcessor(TotemUnbreakingProcessor.getInstance());
+
+		for (final AbstractTotemProcessor<?> builtin : BUILTINS) {
+
+			processors.hookProcessor(builtin);
+		}
 	}
 }
