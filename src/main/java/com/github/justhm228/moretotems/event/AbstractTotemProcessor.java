@@ -26,8 +26,9 @@ package com.github.justhm228.moretotems.event;
 
 import org.bukkit.event.Event;
 import com.github.justhm228.moretotems.MoreTotemsAPI;
+import com.github.justhm228.moretotems.MoreTotemsMixin;
 
-public abstract class AbstractTotemProcessor<E extends Event> implements TotemProcessor<E> {
+public abstract class AbstractTotemProcessor<E extends Event> extends MoreTotemsMixin implements TotemProcessor<E> {
 
 	protected AbstractTotemProcessor() {
 
