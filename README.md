@@ -1,4 +1,4 @@
-## MoreTotems
+# MoreTotems
 
 **MoreTotems** is a simple Paper plugin which adds some minor tweaks to Totems of Undying.
 
