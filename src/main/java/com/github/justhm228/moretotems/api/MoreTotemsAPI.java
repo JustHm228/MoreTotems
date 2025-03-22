@@ -22,33 +22,14 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems.event;
+package com.github.justhm228.moretotems.api;
 
-import org.bukkit.event.Event;
-import com.github.justhm228.moretotems.MoreTotemsAPI;
-import static java.util.Objects.requireNonNull;
+import com.github.justhm228.moretotems.api.event.TotemProcessors;
+import org.bukkit.plugin.Plugin;
 
-final class TotemProcessorGuard<E extends Event> extends TotemProcessorProxy<E> {
+public interface MoreTotemsAPI {
 
-	TotemProcessorGuard(final TotemProcessor<E> guarded) throws NullPointerException {
+	TotemProcessors getTotemProcessors();
 
-		super(requireNonNull(guarded));
-	}
-
-	TotemProcessor<E> getGuarded() {
-
-		return proxied;
-	}
-
-	@Override()
-	public boolean test(final E e) {
-
-		return proxied.test(e);
-	}
-
-	@Override()
-	public void accept(final E e, final MoreTotemsAPI api) {
-
-		proxied.accept(e, api);
-	}
+	Plugin getAsPlugin();
 }

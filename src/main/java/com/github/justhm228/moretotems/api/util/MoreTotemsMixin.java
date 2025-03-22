@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems;
+package com.github.justhm228.moretotems.api.util;
 
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.LivingEntity;

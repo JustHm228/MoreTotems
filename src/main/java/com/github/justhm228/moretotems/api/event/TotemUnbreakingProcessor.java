@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems.event;
+package com.github.justhm228.moretotems.api.event;
 
-import com.github.justhm228.moretotems.MoreTotemsAPI;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.entity.EntityResurrectEvent;

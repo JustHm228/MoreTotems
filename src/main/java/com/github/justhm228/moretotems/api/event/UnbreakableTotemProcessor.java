@@ -22,14 +22,52 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems;
+package com.github.justhm228.moretotems.api.event;
 
-import com.github.justhm228.moretotems.event.TotemProcessors;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
+import org.bukkit.event.entity.EntityResurrectEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
-public interface MoreTotemsAPI {
+final class UnbreakableTotemProcessor extends TotemUsageProcessor {
 
-	TotemProcessors getTotemProcessors();
+	private static final UnbreakableTotemProcessor INSTANCE;
 
-	Plugin getAsPlugin();
+	static {
+
+		INSTANCE = new UnbreakableTotemProcessor();
+	}
+
+	private UnbreakableTotemProcessor() {
+
+		super();
+	}
+
+	static UnbreakableTotemProcessor getInstance() {
+
+		return INSTANCE;
+	}
+
+	@Override()
+	public boolean test(final EntityResurrectEvent e) {
+
+		if (e.isCancelled()) {
+
+			return false;
+		}
+
+		final ItemStack totem = findTotem(e);
+
+		return totem != null && totem.getItemMeta().isUnbreakable();
+	}
+
+	@Override()
+	public void accept(final EntityResurrectEvent e, final MoreTotemsAPI api) {
+
+		final ItemStack totem = findTotem(e).clone();
+
+		final Plugin plugin = api.getAsPlugin();
+
+		plugin.getServer().getScheduler().runTaskLater(plugin, () -> rollbackTotem(e, totem, false), 1L);
+	}
 }

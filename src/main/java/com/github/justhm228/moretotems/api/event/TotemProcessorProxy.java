@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems.event;
+package com.github.justhm228.moretotems.api.event;
 
 import org.bukkit.event.Event;
-import com.github.justhm228.moretotems.MoreTotemsAPI;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 
 public class TotemProcessorProxy<E extends Event> implements TotemProcessor<E> {
 

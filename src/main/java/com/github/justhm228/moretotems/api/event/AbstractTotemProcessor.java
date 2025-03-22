@@ -22,18 +22,22 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems.event;
+package com.github.justhm228.moretotems.api.event;
 
-import java.util.function.BiConsumer;
-import java.util.function.Predicate;
 import org.bukkit.event.Event;
-import com.github.justhm228.moretotems.MoreTotemsAPI;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
+import com.github.justhm228.moretotems.api.util.MoreTotemsMixin;
 
-public interface TotemProcessor<E extends Event> extends Predicate<E>, BiConsumer<E, MoreTotemsAPI> {
+public abstract class AbstractTotemProcessor<E extends Event> extends MoreTotemsMixin implements TotemProcessor<E> {
+
+	protected AbstractTotemProcessor() {
+
+		super();
+	}
 
 	@Override()
-	boolean test(final E e);
+	public abstract boolean test(final E e);
 
 	@Override()
-	void accept(final E e, final MoreTotemsAPI api);
+	public abstract void accept(final E e, final MoreTotemsAPI api);
 }

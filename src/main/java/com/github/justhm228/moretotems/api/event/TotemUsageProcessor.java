@@ -22,22 +22,24 @@
  * SOFTWARE.
  */
 
-package com.github.justhm228.moretotems.event;
+package com.github.justhm228.moretotems.api.event;
 
-import org.bukkit.event.Event;
-import com.github.justhm228.moretotems.MoreTotemsAPI;
-import com.github.justhm228.moretotems.MoreTotemsMixin;
+import com.github.justhm228.moretotems.api.MoreTotemsAPI;
+import org.bukkit.event.entity.EntityResurrectEvent;
 
-public abstract class AbstractTotemProcessor<E extends Event> extends MoreTotemsMixin implements TotemProcessor<E> {
+public abstract class TotemUsageProcessor extends AbstractTotemProcessor<EntityResurrectEvent> {
 
-	protected AbstractTotemProcessor() {
+	protected TotemUsageProcessor() {
 
 		super();
 	}
 
 	@Override()
-	public abstract boolean test(final E e);
+	public boolean test(final EntityResurrectEvent e) {
+
+		return !e.isCancelled() && hasTotem(e);
+	}
 
 	@Override()
-	public abstract void accept(final E e, final MoreTotemsAPI api);
+	public abstract void accept(final EntityResurrectEvent e, final MoreTotemsAPI api);
 }
