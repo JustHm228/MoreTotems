@@ -87,9 +87,9 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 					processor.accept(e, api);
 					affected = true;
 
-				} catch (final Exception failed) {
+				} catch (final RuntimeException failed) {
 
-					throw new RuntimeException(failed);
+					throw failed;
 				}
 			}
 		}
