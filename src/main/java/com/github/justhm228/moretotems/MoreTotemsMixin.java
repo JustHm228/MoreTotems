@@ -82,4 +82,9 @@ public class MoreTotemsMixin {
 
 		return totem;
 	}
+
+	protected final boolean hasTotem(final EntityResurrectEvent e) {
+
+		return findTotem(e) != null;
+	}
 }
