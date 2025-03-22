@@ -37,7 +37,7 @@ public abstract class TotemUsageProcessor extends AbstractTotemProcessor<EntityR
 	@Override()
 	public boolean test(final EntityResurrectEvent e) {
 
-		return !e.isCancelled();
+		return !e.isCancelled() && hasTotem(e);
 	}
 
 	@Override()
