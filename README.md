@@ -1,15 +1,15 @@
 # MoreTotems
 
-<a href="https://modrinth.com/plugin/moretotems" target="_blank">  
-  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/available/modrinth_vector.svg" height="48" alt="modrinth" title="Available on Modrinth">  
+<a href="https://modrinth.com/plugin/moretotems" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/available/modrinth_vector.svg" height="48" alt="modrinth" title="Available on Modrinth">
 </a>
 
-<a href="https://hangar.papermc.io/JustHm228/MoreTotems" target="_blank">  
-  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/available/hangar_vector.svg" height="48" alt="hangar" title="Available on Hangar">  
+<a href="https://hangar.papermc.io/JustHm228/MoreTotems" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/available/hangar_vector.svg" height="48" alt="hangar" title="Available on Hangar">
 </a>
 
-<a href="https://github.com/JustHm228/MoreTotems" target="_blank">  
-  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/available/github_vector.svg" height="48" alt="github" title="Available on GitHub">  
+<a href="https://github.com/JustHm228/MoreTotems" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/available/github_vector.svg" height="48" alt="github" title="Available on GitHub">
 </a>
 
 **MoreTotems** is a simple Paper plugin which adds some minor tweaks to Totems of Undying.
@@ -18,12 +18,12 @@
 
 ### Installation:
 
-<a href="https://papermc.io" target="_blank">  
-  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/supported/paper_vector.svg" height="48" alt="platform-paper" title="Built for Paper">  
+<a href="https://papermc.io" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/supported/paper_vector.svg" height="48" alt="platform-paper" title="Built for Paper">
 </a>
 
-<a href="https://www.spigotmc.org" target="_blank">  
-  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/unsupported/spigot_vector.svg" height="48" alt="platform-spigot" title="Won't support Spigot">  
+<a href="https://www.spigotmc.org" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/unsupported/spigot_vector.svg" height="48" alt="platform-spigot" title="Won't support Spigot">
 </a>
 
 Please ensure that you have the following software installed:
