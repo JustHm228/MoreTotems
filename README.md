@@ -56,7 +56,7 @@ Coming soon!
 
 ## Contact me:
 
-<a href="https://matrix.to/#/@justhm228:matrix.org" target="_blank">
+<a href="https://github.com/JustHm228" target="_blank">
   <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/social/github-singular_vector.svg" height="48" alt="social-github" title="See me on GitHub">
 </a>
 
