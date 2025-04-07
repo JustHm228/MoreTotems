@@ -68,6 +68,7 @@ processResources {
 	inputs.properties props
 	filteringCharset 'UTF-8'
 	exclude '**/*.gitkeep'
+	exclude '**/*.gitignore'
 	filesMatching('paper-plugin.yml') {
 		expand props
 	}
