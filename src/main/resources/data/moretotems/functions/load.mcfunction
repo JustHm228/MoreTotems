@@ -1,2 +1,2 @@
 # Run setup
-function moretotems:setup/install
+function moretotems:config/install
