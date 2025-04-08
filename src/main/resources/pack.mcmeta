@@ -1,9 +1,10 @@
 {
 	"pack": {
-		"pack_format": 41,
+		"pack_format": 7,
 		"description": "Some minor tweaks to Totems of Undying",
 		"supported_formats": {
-            "min_inclusive": 41
+            "min_inclusive": 7,
+            "max_inclusive": 32
         }
 	}
 }
