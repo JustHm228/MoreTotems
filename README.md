@@ -14,9 +14,9 @@
 
 **MoreTotems** is a simple Paper plugin which adds some minor tweaks to Totems of Undying.
 
-## Quick Start
+## 🚀 Quick Start
 
-### Installation:
+### 📥 Installation:
 
 > [!WARNING]
 >
@@ -46,7 +46,7 @@ To install the plugin on your Minecraft server, you should:
 2. Place it to the ``plugins`` directory in the root of the server.
 3. Restart the server.
 
-### Experimental versions:
+### ⚠️ Experimental versions:
 
 <a href="https://fabricmc.net" target="_blank">
   <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/supported/fabric_vector.svg" height="48" alt="platform-fabric" title="Supports Fabric">
@@ -64,14 +64,14 @@ To install the plugin on your Minecraft server, you should:
   <img src="https://raw.githubusercontent.com/intergrav/devins-badges/74adf3b26de1006e9ec9fcffff17322ae3962f9b/assets/cozy/supported/neoforge_vector-cozy.svg" height="48" alt="platform-neoforge" title="Supports NeoForge">
 </a>
 
-> #### Disclaimer:
+> #### ⚠️ Disclaimer:
 > 
 > I am currently developing some experimental alpha versions of this plugin,
 > which can be loaded as vanilla data packs. I recommend not to use them because
 > of many bugs. So, if you download such experimental version and load it to
 > your world, please be ready for many serious errors.
 
-### Features:
+### 💡 Features:
 
  - **"Unbreakable" Totems of Undying.** A Totem of Undying with the 
    [``Unbreakable`` tag](<https://minecraft.wiki/w/Data_component_format#unbreakable>) set will not 
@@ -84,11 +84,11 @@ To install the plugin on your Minecraft server, you should:
      Otherwise, it will not. So, the Totem of Undying enchanted with Unbreaking of 3 level has a 
      75% chance that it will not disappear when used.
 
-### Configuration:
+### 🔧 Configuration:
 
 Coming soon!
 
-## Contact me:
+## 📭 Contact me:
 
 <a href="https://github.com/JustHm228" target="_blank">
   <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/social/github-singular_vector.svg" height="48" alt="social-github" title="See me on GitHub">
@@ -102,7 +102,7 @@ Coming soon!
   <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/social/matrix-singular_vector.svg" height="48" alt="social-matrix" title="Chat with me on Matrix">
 </a>
 
-## License
+## 📖 License
 
 This project and its sources are licensed under the [MIT License](./LICENSE):
 
