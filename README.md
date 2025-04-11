@@ -22,7 +22,8 @@
 >
 > Please, do not download versions from range:
 > [0.1.0-data-1.20.5](https://modrinth.com/datapack/moretotems/version/0.1.0-data-1.20.5)..[0.1.0-1.20.5+mod](https://modrinth.com/datapack/moretotems/version/0.1.0-1.20.5+mod)!
-> They are not loading because of #11 (Data pack is not loading on >=1.20.5) and #13 (Data pack never registers objectives).
+> They are not loading because of [#11](https://github.com/JustHm228/MoreTotems/issues/11) (Data pack is not loading on >=1.20.5) and
+> [#13](https://github.com/JustHm228/MoreTotems/issues/13) (Data pack never registers objectives).
 > 
 > So, it is recommended not to use experimental data pack versions of the plugin.
 
