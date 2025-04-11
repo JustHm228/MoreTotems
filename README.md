@@ -63,12 +63,12 @@ To install the plugin on your Minecraft server, you should:
   <img src="https://raw.githubusercontent.com/intergrav/devins-badges/74adf3b26de1006e9ec9fcffff17322ae3962f9b/assets/cozy/supported/neoforge_vector-cozy.svg" height="48" alt="platform-neoforge" title="Supports NeoForge">
 </a>
 
-#### Disclaimer:
-
-I am currently developing some experimental alpha versions of this plugin,
-which can be loaded as vanilla data packs. I recommend not to use them because
-of many bugs. So, if you download such experimental version and load it to
-your world, please be ready for many serious errors.
+> #### Disclaimer:
+> 
+> I am currently developing some experimental alpha versions of this plugin,
+> which can be loaded as vanilla data packs. I recommend not to use them because
+> of many bugs. So, if you download such experimental version and load it to
+> your world, please be ready for many serious errors.
 
 ### Features:
 
