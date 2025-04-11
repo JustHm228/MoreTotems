@@ -45,6 +45,15 @@ To install the plugin on your Minecraft server, you should:
 2. Place it to the ``plugins`` directory in the root of the server.
 3. Restart the server.
 
+### Experimental versions:
+
+#### Disclaimer:
+
+I am currently developing some experimental alpha versions of this plugin,
+which can be loaded as vanilla data packs. I recommend not to use them because
+of many bugs. So, if you download such experimental version and load it to
+your world, please be ready for many serious errors.
+
 ### Features:
 
  - **"Unbreakable" Totems of Undying.** A Totem of Undying with the 
