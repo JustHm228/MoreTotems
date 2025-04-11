@@ -47,6 +47,22 @@ To install the plugin on your Minecraft server, you should:
 
 ### Experimental versions:
 
+<a href="https://fabricmc.net" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/supported/fabric_vector.svg" height="48" alt="platform-fabric" title="Supports Fabric">
+</a>
+
+<a href="https://files.minecraftforge.net" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/supported/forge_vector.svg" height="48" alt="platform-forge" title="Supports Forge">
+</a>
+
+<a href="https://quiltmc.net" target="_blank">
+  <img src="https://github.com/intergrav/devins-badges/raw/refs/heads/v3/assets/cozy/supported/quilt_vector.svg" height="48" alt="platform-quilt" title="Supports Quilt">
+</a>
+
+<a href="https://neoforged.net" target="_blank">
+  <img src="https://raw.githubusercontent.com/intergrav/devins-badges/74adf3b26de1006e9ec9fcffff17322ae3962f9b/assets/cozy/supported/neoforge_vector-cozy.svg" height="48" alt="platform-neoforge" title="Supports NeoForge">
+</a>
+
 #### Disclaimer:
 
 I am currently developing some experimental alpha versions of this plugin,
