@@ -80,7 +80,7 @@ To install the plugin on your Minecraft server, you should:
    - $\ge$ 1.20.5: ``/minecraft:give @s minecraft:totem_of_undying[minecraft:unbreakable={}] 1``
  - **Enchantments for Totems of Undying:**
    - **[Unbreaking](https://minecraft.wiki/w/Unbreaking).** Every Totem of Undying enchanted with 
-     Unbreaking of $n$th level has a $(\frac{100}{n+1})$% chance that it will disappear when used.
+     Unbreaking of $n$ th level has a $(\frac{100}{n+1})$% chance that it will disappear when used.
      Otherwise, it will not. So, the Totem of Undying enchanted with Unbreaking of 3 level has a 
      75% chance that it will not disappear when used.
 
