@@ -24,7 +24,6 @@
 
 package com.github.justhm228.moretotems.main;
 
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
@@ -53,12 +52,6 @@ public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 	public TotemListener getTotemListener() {
 
 		return totemListener; // Provide a singleton instance of `TotemListener`
-	}
-
-	@Override()
-	public Plugin getAsPlugin() {
-
-		return this;
 	}
 
 	@Override()

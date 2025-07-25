@@ -70,7 +70,7 @@ final class UnbreakableTotemProcessor extends TotemUsageProcessor {
 	@Override()
 	public void accept(final EntityResurrectEvent e, final MoreTotemsAPI api) {
 
-		final Plugin plugin = api.getAsPlugin();
+		final Plugin plugin = (Plugin) api;
 
 		final Logger log = api.getSLF4JLogger();
 
