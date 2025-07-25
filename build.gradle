@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'com.gradleup.shadow' version '8.3.8'
 }
 
 group = 'com.github.justhm228'
@@ -49,4 +50,17 @@ processResources {
 	filesMatching('paper-plugin.yml') {
 		expand props
 	}
+}
+
+jar {
+	archiveClassifier = 'original'
+}
+
+shadowJar {
+	archiveClassifier = 'paper'
+}
+
+artifacts {
+	archives shadowJar
+	shadow shadowJar
 }
