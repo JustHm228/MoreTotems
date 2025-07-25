@@ -101,7 +101,7 @@ public final class TotemUnbreakingProcessor extends TotemUsageProcessor {
 
 		final Plugin plugin = api.getAsPlugin();
 
-		final Logger log = plugin.getSLF4JLogger();
+		final Logger log = api.getSLF4JLogger();
 
 		final ItemStack totem = findTotem(e).clone();
 

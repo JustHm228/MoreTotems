@@ -26,10 +26,13 @@ package com.github.justhm228.moretotems.api;
 
 import org.bukkit.plugin.Plugin;
 import com.github.justhm228.moretotems.api.event.TotemProcessors;
+import org.slf4j.Logger;
 
 public interface MoreTotemsAPI {
 
 	TotemProcessors getTotemProcessors();
 
 	Plugin getAsPlugin();
+
+	Logger getSLF4JLogger();
 }

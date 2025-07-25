@@ -31,6 +31,7 @@ import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.api.event.TotemProcessors;
 import com.github.justhm228.moretotems.internal.event.TotemListener;
 import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
+import org.jetbrains.annotations.NotNull;
 
 public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 
@@ -102,5 +103,11 @@ public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 		final Logger log = getSLF4JLogger();
 
 		log.info("Shutting down...");
+	}
+
+	@Override()
+	public @NotNull() Logger getSLF4JLogger() {
+
+		return super.getSLF4JLogger();
 	}
 }

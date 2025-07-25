@@ -54,7 +54,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	public void hookProcessor(final TotemProcessor<?> processor) {
 
-		final Logger log = api.getAsPlugin().getSLF4JLogger();
+		final Logger log = api.getSLF4JLogger();
 
 		processors.add(new TotemProcessorGuard<>(processor));
 		log.info("[TotemProcessors] {} has successfully been registered!", processor.getClass().getName());
@@ -67,7 +67,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	public void unhookProcessor(final TotemProcessor<?> processor) {
 
-		final Logger log = api.getAsPlugin().getSLF4JLogger();
+		final Logger log = api.getSLF4JLogger();
 
 		if (processors.removeIf((g) -> g.getGuarded() == processor)) {
 
@@ -78,7 +78,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public boolean fireProcessors(final Object e) {
 
-		final Logger log = api.getAsPlugin().getSLF4JLogger();
+		final Logger log = api.getSLF4JLogger();
 
 		boolean affected = false;
 
