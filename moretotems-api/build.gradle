@@ -1,10 +1,10 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
 group = 'com.github.justhm228'
 version = '0.1.2'
 
 dependencies {
-    implementation project(':moretotems-api:common')
+    api project(':moretotems-api:common')
 }
