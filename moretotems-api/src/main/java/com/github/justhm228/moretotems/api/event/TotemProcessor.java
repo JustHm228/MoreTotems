@@ -26,10 +26,9 @@ package com.github.justhm228.moretotems.api.event;
 
 import java.util.function.Predicate;
 import java.util.function.BiConsumer;
-import org.bukkit.event.Event;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 
-public interface TotemProcessor<E extends Event> extends Predicate<E>, BiConsumer<E, MoreTotemsAPI> {
+public interface TotemProcessor<E> extends Predicate<E>, BiConsumer<E, MoreTotemsAPI> {
 
 	@Override()
 	boolean test(final E e);

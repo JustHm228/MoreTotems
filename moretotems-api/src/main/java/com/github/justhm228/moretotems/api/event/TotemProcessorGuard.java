@@ -24,11 +24,10 @@
 
 package com.github.justhm228.moretotems.api.event;
 
-import org.bukkit.event.Event;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import static java.util.Objects.requireNonNull;
 
-final class TotemProcessorGuard<E extends Event> extends TotemProcessorProxy<E> {
+final class TotemProcessorGuard<E> extends TotemProcessorProxy<E> {
 
 	TotemProcessorGuard(final TotemProcessor<E> guarded) throws NullPointerException {
 

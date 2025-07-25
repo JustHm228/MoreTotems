@@ -26,7 +26,6 @@ package com.github.justhm228.moretotems.api.event;
 
 import java.util.*;
 import java.util.stream.Stream;
-import org.bukkit.event.Event;
 import org.slf4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
@@ -38,7 +37,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	private final MoreTotemsAPI api;
 
-	private final Set<TotemProcessorGuard<? extends Event>> processors;
+	private final Set<TotemProcessorGuard<?>> processors;
 
 	public TotemProcessors(final MoreTotemsAPI api) throws NullPointerException, IllegalStateException {
 
@@ -77,7 +76,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public boolean fireProcessors(final Event e) {
+	public boolean fireProcessors(final Object e) {
 
 		final Logger log = api.getAsPlugin().getSLF4JLogger();
 
@@ -114,25 +113,25 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 		return affected;
 	}
 
-	public Stream<? extends TotemProcessor<? extends Event>> stream() {
+	public Stream<? extends TotemProcessor<?>> stream() {
 
 		return processors.stream();
 	}
 
 	@Override()
-	public Spliterator<TotemProcessor<? extends Event>> spliterator() {
+	public Spliterator<TotemProcessor<?>> spliterator() {
 
 		@SuppressWarnings({ "rawtypes", "unchecked" })
-		final Spliterator<TotemProcessor<? extends Event>> result = (Spliterator<TotemProcessor<? extends Event>>) (Spliterator) processors.spliterator();
+		final Spliterator<TotemProcessor<?>> result = (Spliterator<TotemProcessor<?>>) (Spliterator) processors.spliterator();
 
 		return result;
 	}
 
 	@Override()
-	public @NotNull() Iterator<TotemProcessor<? extends Event>> iterator() {
+	public @NotNull() Iterator<TotemProcessor<?>> iterator() {
 
 		@SuppressWarnings({ "rawtypes", "unchecked" })
-		final Iterator<TotemProcessor<? extends Event>> result = (Iterator<TotemProcessor<? extends Event>>) (Iterator) processors.iterator();
+		final Iterator<TotemProcessor<?>> result = (Iterator<TotemProcessor<?>>) (Iterator) processors.iterator();
 
 		return result;
 	}
