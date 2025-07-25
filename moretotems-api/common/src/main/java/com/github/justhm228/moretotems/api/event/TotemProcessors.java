@@ -37,9 +37,11 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	private final MoreTotemsAPI api;
 
+	private final Logger log;
+
 	private final Set<TotemProcessorGuard<?>> processors;
 
-	public TotemProcessors(final MoreTotemsAPI api) throws NullPointerException, IllegalStateException {
+	public TotemProcessors(final MoreTotemsAPI api, final Logger log) throws NullPointerException, IllegalStateException {
 
 		super();
 
@@ -49,7 +51,13 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 		}
 
 		this.api = api;
+		this.log = log;
 		processors = new HashSet<>(INITIAL_CAPACITY);
+	}
+
+	public TotemProcessors(final MoreTotemsAPI api) throws NullPointerException, IllegalStateException {
+
+		this(api, requireNonNull(api).getSLF4JLogger());
 	}
 
 	public void hookProcessor(final TotemProcessor<?> processor) {
@@ -67,8 +75,6 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	public void unhookProcessor(final TotemProcessor<?> processor) {
 
-		final Logger log = api.getSLF4JLogger();
-
 		if (processors.removeIf((g) -> g.getGuarded() == processor)) {
 
 			log.info("[TotemProcessors] {} has successfully been unregistered!", processor.getClass().getName());
@@ -77,8 +83,6 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public boolean fireProcessors(final Object e) {
-
-		final Logger log = api.getSLF4JLogger();
 
 		boolean affected = false;
 
