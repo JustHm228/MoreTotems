@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(":moretotems-api:common")
+    implementation project(":moretotems-api:paper")
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
 }
 
