@@ -26,7 +26,6 @@ package com.github.justhm228.moretotems.api.event;
 
 import org.bukkit.event.Event;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
-import com.github.justhm228.moretotems.api.util.MoreTotemsMixin;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityResurrectEvent;
@@ -35,7 +34,7 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
-public abstract class AbstractTotemProcessor<E extends Event> extends MoreTotemsMixin implements TotemProcessor<E> {
+public abstract class AbstractTotemProcessor<E extends Event> implements TotemProcessor<E> {
 
 	protected AbstractTotemProcessor() {
 
