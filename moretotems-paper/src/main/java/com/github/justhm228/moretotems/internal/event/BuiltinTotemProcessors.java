@@ -32,13 +32,11 @@ import static java.util.Objects.requireNonNull;
 
 public final class BuiltinTotemProcessors {
 
-	public static final int INITIAL_CAPACITY = 2;
-
 	private static final Set<AbstractTotemProcessor<?>> BUILTINS;
 
 	static {
 
-		BUILTINS = new HashSet<>(INITIAL_CAPACITY);
+		BUILTINS = new HashSet<>(2);
 		BUILTINS.add(UnbreakableTotemProcessor.getInstance());
 		BUILTINS.add(TotemUnbreakingProcessor.getInstance());
 	}
