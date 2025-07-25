@@ -30,6 +30,7 @@ import org.slf4j.Logger;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
 import com.github.justhm228.moretotems.api.event.TotemProcessors;
 import com.github.justhm228.moretotems.internal.event.TotemListener;
+import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
 
 public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 
@@ -78,6 +79,7 @@ public final class MoreTotemsPaper extends JavaPlugin implements MoreTotemsAPI {
 		log.info("Loading TotemProcessors...");
 
 		totemProcessors = new TotemProcessors(this);
+		BuiltinTotemProcessors.initDefault(totemProcessors);
 
 		log.info("Built-in TotemProcessors has been loaded!");
 		log.info("Hooking into the event queue...");

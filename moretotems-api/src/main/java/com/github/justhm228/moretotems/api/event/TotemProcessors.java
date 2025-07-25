@@ -30,7 +30,6 @@ import org.bukkit.event.Event;
 import org.slf4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.github.justhm228.moretotems.api.MoreTotemsAPI;
-import com.github.justhm228.moretotems.internal.event.BuiltinTotemProcessors;
 import static java.util.Objects.requireNonNull;
 
 public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
@@ -52,7 +51,6 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
 		this.api = api;
 		processors = new HashSet<>(INITIAL_CAPACITY);
-		BuiltinTotemProcessors.initDefault(this);
 	}
 
 	public void hookProcessor(final TotemProcessor<?> processor) {
