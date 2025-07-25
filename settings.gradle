@@ -1,4 +1,5 @@
 rootProject.name = 'MoreTotems'
 include 'moretotems-api'
+include 'moretotems-api:common'
 include 'moretotems-paper'
 include 'moretotems-pack'
