@@ -35,6 +35,8 @@ import static java.util.Objects.requireNonNull;
 
 public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 
+	public static final int INITIAL_CAPACITY = 2;
+
 	private final MoreTotemsAPI api;
 
 	private final Set<TotemProcessorGuard<? extends Event>> processors;
@@ -49,7 +51,7 @@ public final class TotemProcessors implements Iterable<TotemProcessor<?>> {
 		}
 
 		this.api = api;
-		processors = new HashSet<>(BuiltinTotemProcessors.INITIAL_CAPACITY);
+		processors = new HashSet<>(INITIAL_CAPACITY);
 		BuiltinTotemProcessors.initDefault(this);
 	}
 
